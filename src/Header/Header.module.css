@@ -1,64 +1,63 @@
-.content {
-    background: url(../../public/classic-and-rare-books.jpg) no-repeat center / cover;
+.background {
+    background: url('../../public/classic-and-rare-books-fotor-2024061813419.jpg') no-repeat center / cover;
     color: white;
 }
 
 .container {
     width: 1176px;
-
     margin: 0 auto;
-    text-align: center;
-    border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .title {
-    font-size: 56px;
-    font-weight: 100;
-
     text-align: center;
-    margin-top: 42px;
+    padding-top: 86px;
     margin-bottom: 42px;
 }
 
-.bookTitleInput {
+.title a {
+    font-size: 56px;
+    font-weight: 300;
+}
+
+.bookNameInput {
     border: none;
     outline: none;
-    height: 48px;
-    border-radius: 48px;
-    font-size: 20px;
-    width: 726px;
 
-    padding-left: 42px;
+    width: 704px;
+    height: 48px;
+    font-size: 18px;
+
+    border-radius: 48px;
+
+    padding-left: 64px;
+    margin-left: 204px;
     margin-bottom: 86px;
 }
 
-.bookCategories {
-   width: 768px;
-
-   margin: 0 auto;
-   margin-bottom: 120px;
+.bookSelect {
+    width: 768px;
+    margin-left: 204px;
+    padding-bottom: 138px;
 }
 
-.bookCategoriesInput {
+.select {
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    width: 360px;
+    height: 48px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 18px;
+
+}
+
+.categorySelect {
     float: left;
-
-    border: none;
-    outline: none;
-    height: 48px;
-    border-radius: 48px;
-    font-size: 20px;
-    width: 312px;
-    padding-left: 42px;
 }
 
-.bookSortInput {
+.sortSelect {
     float: right;
-
-    border: none;
-    outline: none;
-    height: 48px;
-    border-radius: 48px;
-    font-size: 20px;
-    width: 312px;
-    padding-left: 42px;
 }
+
