@@ -1,0 +1,76 @@
+.background {
+    background: url('../../public/classic-and-rare-books-fotor-2024061813419.jpg') no-repeat center / cover;
+    color: white;
+}
+
+.container {
+    width: 1176px;
+    margin: 0 auto;
+}
+
+.title {
+    text-align: center;
+    padding-top: 42px;
+    margin-bottom: 42px;
+}
+
+.title a {
+    font-size: 56px;
+    font-weight: 300;
+}
+
+.bookNameInput {
+    border: none;
+    outline: none;
+
+    width: 704px;
+    height: 48px;
+    font-size: 18px;
+
+    border-radius: 48px;
+
+    padding-left: 64px;
+    margin-left: 204px;
+    margin-bottom: 42px;
+}
+
+.tips {
+    width: 768px;
+
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.categoryTip {
+    padding-left: 20px;
+}
+
+.sortTip {
+    padding-left: 282px;
+}
+
+.bookSelect {
+    width: 768px;
+    margin-left: 204px;
+    padding-bottom: 138px;
+}
+
+.select {
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    width: 360px;
+    height: 48px;
+    border-radius: 48px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.categorySelect {
+    float: left;
+}
+
+.sortSelect {
+    float: right;
+}
