@@ -10,7 +10,7 @@
 
 .title {
     text-align: center;
-    padding-top: 86px;
+    padding-top: 42px;
     margin-bottom: 42px;
 }
 
@@ -31,7 +31,22 @@
 
     padding-left: 64px;
     margin-left: 204px;
-    margin-bottom: 86px;
+    margin-bottom: 42px;
+}
+
+.tips {
+    width: 768px;
+
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.categoryTip {
+    padding-left: 20px;
+}
+
+.sortTip {
+    padding-left: 282px;
 }
 
 .bookSelect {
@@ -47,10 +62,9 @@
     cursor: pointer;
     width: 360px;
     height: 48px;
-    border-radius: 12px;
+    border-radius: 48px;
     text-align: center;
     font-size: 18px;
-
 }
 
 .categorySelect {
@@ -60,4 +74,3 @@
 .sortSelect {
     float: right;
 }
-
