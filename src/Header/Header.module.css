@@ -42,11 +42,13 @@
 }
 
 .categoryTip {
-    padding-left: 20px;
+    font-size: 20px;
+    margin-left: 20px;
 }
 
 .sortTip {
-    padding-left: 282px;
+    font-size: 20px;
+    margin-left: 300px;
 }
 
 .bookSelect {
