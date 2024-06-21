@@ -1,31 +1,30 @@
 .container {
-    width: 1176px;
-    margin: 0 auto;
+  width: 1176px;
+  margin: 0 auto;
 }
 
 .foundResults {
-    width: 564px;
-    text-align: center;
-    padding-top: 42px;
-    margin: 0 auto;
+  width: 564px;
+  text-align: center;
+  padding-top: 42px;
+  margin: 0 auto;
 }
 
 .foundResults a {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .line {
-    width: 564px;
-    height: 1.5px;
-    background: rgba(0, 0, 0, 0.6);
-
-    margin-top: 10px;
+  width: 564px;
+  height: 1px;
+  background: #0c0c0c;
+  margin-top: 10px;
 }
 
 .cards {
-    margin-top: 76px;
-    margin-bottom: 160px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 48px;
+  margin-top: 76px;
+  margin-bottom: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
 }
