@@ -1,9 +1,8 @@
 import './App.css'
-import Header from './Header/Header'
-import Body from './Body/Body'
+import Header from './pages/MainPage/Header/Header'
+import Body from './pages/MainPage/Body/Body'
 
 const App = () => {
-
   return (
     <>
       <Header />

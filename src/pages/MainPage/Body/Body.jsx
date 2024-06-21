@@ -1,16 +1,16 @@
-import c from './Body.module.css'
-import BookCard from './bookInforamationCard/BookCard'
+import styles from './Body.module.css'
+import BookCard from '../../../components/bookInforamationCard/BookCard'
 
 const Body = () => {
     return (
         <>
-        <div className={c.container}>
-            <div className={c.foundResults}>
+        <div className={styles.container}>
+            <div className={styles.foundResults}>
                 <a>Found 446 results</a>
-                <div className={c.line}/>
+                <div className={styles.line}/>
             </div>
 
-            <div className={c.cards}>
+            <div className={styles.cards}>
                 <BookCard/>
                 <BookCard/>
                 <BookCard/>
