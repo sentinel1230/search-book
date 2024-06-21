@@ -20,24 +20,39 @@
   font-weight: 300;
 }
 
+.bookNameInput, .searchButton {
+  vertical-align: top;
+}
+
 .bookNameInput {
   border: none;
   outline: none;
-
-  width: 704px;
+  width: 616px;
   height: 48px;
   font-size: 18px;
-
   border-radius: 48px;
-
   padding-left: 64px;
   margin-left: 204px;
   margin-bottom: 42px;
 }
 
+.searchButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 77px;
+  height: 48px;
+  margin-left: 10px;
+  background: white;
+  border-radius: 48px;
+}
+
+.searchButton img {
+  vertical-align: middle;
+}
+
 .tips {
   width: 768px;
-
   font-size: 28px;
   margin-bottom: 10px;
 }

@@ -1,4 +1,5 @@
 import styles from "./Header.module.css";
+import svg from '../../../assets/Vector.svg';
 
 const Header = () => {
   return (
@@ -8,10 +9,11 @@ const Header = () => {
           <a>Search for Books</a>
         </div>
         <input
-          type="text"
-          className={styles.bookNameInput}
-          placeholder="Enter book name"
-        />
+            type="text"
+            className={styles.bookNameInput}
+            placeholder="Enter book name"
+          />
+          <button className={styles.searchButton}><img src={svg}/></button>
 
         <div className={styles.bookSelect}>
           <div className={styles.tips}>
