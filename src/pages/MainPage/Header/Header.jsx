@@ -1,19 +1,43 @@
 import styles from "./Header.module.css";
-import svg from '../../../assets/Vector.svg';
+import svg from "../../../assets/Vector.svg";
 
-const Header = () => {
+import axios from "axios";
+import { useState } from "react";
+
+const Header = ({ setData }) => {
+  const [search, setSearch] = useState("");
+  const searchBook = (evt) => {
+    if (evt.key === "Enter") {
+      axios
+        .get(
+          "https://www.googleapis.com/books/v1/volumes?q=" +
+            search +
+            "&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU",
+        )
+        .then((res) => setData(res.data.items))
+        .catch((err) => console.log(err));
+    }
+  };
+
   return (
     <div className={styles.background}>
       <div className={styles.container}>
         <div className={styles.title}>
           <a>Search for Books</a>
         </div>
-        <input
+        <div className={styles.search}>
+          <input
             type="text"
             className={styles.bookNameInput}
             placeholder="Enter book name"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyPress={searchBook}
           />
-          <button className={styles.searchButton}><img src={svg}/></button>
+          <button className={styles.searchButton}>
+            <img src={svg} />
+          </button>
+        </div>
 
         <div className={styles.bookSelect}>
           <div className={styles.tips}>
@@ -26,11 +50,6 @@ const Header = () => {
             className={`${styles.categorySelect} ${styles.select}`}
           >
             <option value="0">All</option>
-            <option value="1">Первый вариант</option>
-            <option value="2">Второй вариант</option>
-            <option value="3">Третий вариант</option>
-            <option value="4">Четвертый вариант</option>
-            <option value="5">Пятый вариант</option>
           </select>
 
           <select
@@ -38,11 +57,6 @@ const Header = () => {
             className={`${styles.sortSelect} ${styles.select}`}
           >
             <option value="0">Relevance</option>
-            <option value="1">Первый вариант</option>
-            <option value="2">Второй вариант</option>
-            <option value="3">Третий вариант</option>
-            <option value="4">Четвертый вариант</option>
-            <option value="5">Пятый вариант</option>
           </select>
         </div>
       </div>

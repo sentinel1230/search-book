@@ -1,7 +1,7 @@
 import styles from "./Body.module.css";
 import BookCard from "../../../components/bookInforamationCard/BookCard";
 
-const Body = () => {
+const Body = ({ bookData }) => {
   return (
     <>
       <div className={styles.container}>
@@ -10,16 +10,7 @@ const Body = () => {
           <div className={styles.line} />
         </div>
 
-        <div className={styles.cards}>
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-          <BookCard />
-        </div>
+        <div className={styles.cards}>{<BookCard bookData={bookData} />}</div>
       </div>
     </>
   );
