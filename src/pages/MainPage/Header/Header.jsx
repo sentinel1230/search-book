@@ -8,7 +8,7 @@ const Header = ({ setData }) => {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
   const searchBook = () => {
-    if (search.length >= 3) {
+    if (search.length >= 3 && search.length <= 35) {
       setError("")
       axios
         .get(
@@ -30,7 +30,7 @@ const Header = ({ setData }) => {
           setError("Error. Try again")
         });
     }
-    else { setError("Enter a book name") }
+    else { setError("Your string should be between 3 and 35 characters") }
   };
 
   const handleButtonClick = () => { searchBook() }
