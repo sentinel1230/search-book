@@ -8,14 +8,17 @@ const Header = ({ setData }) => {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
 
+  const [category, setCategory] = useState("All");
+  const [sort, setSort] = useState("Relevance");
+
   const searchBook = () => {
-    if (search.length > 0 && search.length <= 35) {
+    if (search.length > 0) {
       setError("")
+      
+      let categoryQuery = category === "All" ? "" : `+subject:${category}`;
       axios
         .get(
-          "https://www.googleapis.com/books/v1/volumes?q=" +
-          search +
-          "&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU",
+          `https://www.googleapis.com/books/v1/volumes?q=${search}+subject:${categoryQuery}&orderBy=${sort}&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU`,
         )
         .then((res) => {
           if (res.data.items && res.data.items.length > 0) {
@@ -69,22 +72,26 @@ const Header = ({ setData }) => {
           <select
             name="categories"
             className={`${styles.categorySelect} ${styles.select}`}
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
           >
-            <option value="0">All</option>
-            <option value="1">Art</option>
-            <option value="2">Biography</option>
-            <option value="3">Computers</option>
-            <option value="4">History</option>
-            <option value="5">Medical</option>
-            <option value="6">Poetry</option>
+            <option value="All">All</option>
+            <option value="Art">Art</option>
+            <option value="Biography">Biography</option>
+            <option value="Computers">Computers</option>
+            <option value="History">History</option>
+            <option value="Medical">Medical</option>
+            <option value="Poetry">Poetry</option>
           </select>
 
           <select
             name="sort"
             className={`${styles.sortSelect} ${styles.select}`}
+            value={sort}
+            onChange={(e) => setSort(e.target.value)}
           >
-            <option value="0">Relevance</option>
-            <option value="1">Newest</option>
+            <option value="Relevance">Relevance</option>
+            <option value="Newest">Newest</option>
           </select>
         </div>
       </div>
