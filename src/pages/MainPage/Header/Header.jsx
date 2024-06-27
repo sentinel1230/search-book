@@ -7,17 +7,23 @@ import { useState } from "react";
 const Header = ({ setData }) => {
   const [search, setSearch] = useState("");
   const searchBook = (evt) => {
-    if (evt.key === "Enter") {
+    if (search.trim()) {
       axios
         .get(
           "https://www.googleapis.com/books/v1/volumes?q=" +
-            search +
-            "&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU",
+          search +
+          "&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU",
         )
         .then((res) => setData(res.data.items))
         .catch((err) => console.log(err));
     }
   };
+
+  const handleButtonClick = () => { searchBook() }
+
+  const handleEnterClick = (evt) => {
+    if (evt.key === "Enter") { searchBook() }
+  }
 
   return (
     <div className={styles.background}>
@@ -32,9 +38,9 @@ const Header = ({ setData }) => {
             placeholder="Enter book name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onKeyPress={searchBook}
+            onKeyPress={handleEnterClick}
           />
-          <button className={styles.searchButton}>
+          <button className={styles.searchButton} onClick={handleButtonClick}>
             <img src={svg} />
           </button>
         </div>
