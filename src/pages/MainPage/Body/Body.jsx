@@ -6,7 +6,7 @@ const Body = ({ bookData }) => {
     <>
       <div className={styles.container}>
         <div className={styles.foundResults}>
-          <a>Found 446 results</a>
+          <a>Found {bookData.length} results</a>
           <div className={styles.line} />
         </div>
 
