@@ -7,6 +7,7 @@ import { useState } from "react";
 const Header = ({ setData }) => {
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
+
   const searchBook = () => {
     if (search.length >= 3 && search.length <= 35) {
       setError("")
@@ -70,6 +71,12 @@ const Header = ({ setData }) => {
             className={`${styles.categorySelect} ${styles.select}`}
           >
             <option value="0">All</option>
+            <option value="1">Art</option>
+            <option value="2">Biography</option>
+            <option value="3">Computers</option>
+            <option value="4">History</option>
+            <option value="5">Medical</option>
+            <option value="6">Poetry</option>
           </select>
 
           <select
@@ -77,6 +84,7 @@ const Header = ({ setData }) => {
             className={`${styles.sortSelect} ${styles.select}`}
           >
             <option value="0">Relevance</option>
+            <option value="1">Newest</option>
           </select>
         </div>
       </div>
