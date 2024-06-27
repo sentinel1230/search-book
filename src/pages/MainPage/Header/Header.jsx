@@ -9,7 +9,7 @@ const Header = ({ setData }) => {
   const [search, setSearch] = useState("");
 
   const searchBook = () => {
-    if (search.length >= 3 && search.length <= 35) {
+    if (search.length > 0 && search.length <= 35) {
       setError("")
       axios
         .get(
