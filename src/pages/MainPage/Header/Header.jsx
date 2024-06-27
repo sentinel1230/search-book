@@ -5,18 +5,32 @@ import axios from "axios";
 import { useState } from "react";
 
 const Header = ({ setData }) => {
+  const [error, setError] = useState("");
   const [search, setSearch] = useState("");
-  const searchBook = (evt) => {
-    if (search.trim()) {
+  const searchBook = () => {
+    if (search.length >= 3) {
+      setError("")
       axios
         .get(
           "https://www.googleapis.com/books/v1/volumes?q=" +
           search +
           "&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU",
         )
-        .then((res) => setData(res.data.items))
-        .catch((err) => console.log(err));
+        .then((res) => {
+          if (res.data.items && res.data.items.length > 0) {
+            setData(res.data.items)
+          } else {
+            setData([])
+            setError("No books found")
+          }
+        })
+        .catch((err) => {
+          console.log("Search error: ", err)
+          setData([])
+          setError("Error. Try again")
+        });
     }
+    else { setError("Enter a book name") }
   };
 
   const handleButtonClick = () => { searchBook() }
