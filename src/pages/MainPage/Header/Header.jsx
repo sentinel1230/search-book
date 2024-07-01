@@ -14,7 +14,7 @@ const Header = ({ setData }) => {
   const searchBook = () => {
     if (search.length > 0) {
       setError("")
-
+      
       let categoryQuery = category === "All" ? "" : `+subject:${category}`;
       axios
         .get(
