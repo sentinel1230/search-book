@@ -23,8 +23,26 @@
 
 .cards {
   margin-top: 76px;
-  margin-bottom: 160px;
+  padding-bottom: 120px;
   display: flex;
   flex-wrap: wrap;
   gap: 48px;
+}
+
+.loadButton {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.loadButtonStyle {
+  width: 360px;
+  height: 48px;
+
+  border-radius: 48px;
+  border: 1px solid black;
+  background: white;
+  cursor: pointer;
+
+  font-weight: 500;
+  text-transform: uppercase;
 }
