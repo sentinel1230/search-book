@@ -17,7 +17,7 @@ const Header = ({ setData }) => {
     if (search.length > 0) {
       setError("")
 
-      let catUrl = category === "All" ? "" : `+subject:${category}`;
+      let catUrl = category === "All" ? "" : `+subject:${category}`
       let url = `https://www.googleapis.com/books/v1/volumes?q=${search}${catUrl}&orderBy=${sort}&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU`
 
       axios
