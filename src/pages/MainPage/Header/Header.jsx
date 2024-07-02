@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
 import svg from "../../../assets/Vector.svg";
-import SelectComponent from "./SelectComponent";
-import { categoryOptions, sortOptions } from "./SelectData";
+import SelectComponent from "./SelectComponent/SelectComponent";
+import { categoryOptions, sortOptions } from "./SelectComponent/SelectData";
 
 import axios from "axios";
 

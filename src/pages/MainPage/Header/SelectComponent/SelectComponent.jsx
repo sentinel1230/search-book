@@ -1,4 +1,4 @@
-import styles from './Header.module.css'
+import styles from '../Header.module.css'
 
 const SelectComponent = ({ name, value, onChange, options }) => {
     return (
