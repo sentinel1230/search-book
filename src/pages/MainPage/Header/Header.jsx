@@ -16,10 +16,12 @@ const Header = ({ setData }) => {
   const searchBook = () => {
     if (search.length > 0) {
       setError("")
+
+      let catUrl = category === "All" ? "" : `+subject:${category}`;
+      let url = `https://www.googleapis.com/books/v1/volumes?q=${search}${catUrl}&orderBy=${sort}&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU`
+
       axios
-        .get(
-          `https://www.googleapis.com/books/v1/volumes?q=${search}+subject:${category}&orderBy=${sort}&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU`,
-        )
+        .get(url)
         .then((res) => {
           if (res.data.items && res.data.items.length > 0) {
             setData(res.data.items)
