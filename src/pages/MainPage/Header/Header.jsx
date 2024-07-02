@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./Header.module.css";
 import svg from "../../../assets/Vector.svg";
+import SelectComponent from "./SelectComponent";
+import { categoryOptions, sortOptions } from "./SelectData";
 
 import axios from "axios";
 
@@ -67,30 +69,19 @@ const Header = ({ setData }) => {
             <a className={styles.sortTip}>sort by</a>
           </div>
 
-          <select
+          <SelectComponent
             name="categories"
-            className={`${styles.categorySelect} ${styles.select}`}
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value="All">All</option>
-            <option value="Art">Art</option>
-            <option value="Biography">Biography</option>
-            <option value="Computers">Computers</option>
-            <option value="History">History</option>
-            <option value="Medical">Medical</option>
-            <option value="Poetry">Poetry</option>
-          </select>
+            options={categoryOptions}
+          />
 
-          <select
+          <SelectComponent
             name="sort"
-            className={`${styles.sortSelect} ${styles.select}`}
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-          >
-            <option value="Relevance">Relevance</option>
-            <option value="Newest">Newest</option>
-          </select>
+            options={sortOptions}
+          />
 
         </div>
       </div>
