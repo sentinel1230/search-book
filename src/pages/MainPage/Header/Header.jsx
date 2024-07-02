@@ -1,8 +1,8 @@
+import { useState } from "react";
 import styles from "./Header.module.css";
 import svg from "../../../assets/Vector.svg";
 
 import axios from "axios";
-import { useState } from "react";
 
 const Header = ({ setData }) => {
   const [error, setError] = useState("");
@@ -91,6 +91,7 @@ const Header = ({ setData }) => {
             <option value="Relevance">Relevance</option>
             <option value="Newest">Newest</option>
           </select>
+
         </div>
       </div>
     </div>

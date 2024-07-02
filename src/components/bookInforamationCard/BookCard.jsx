@@ -3,11 +3,18 @@ import { categories, bookTitle, authors, bookCover } from "./variables";
 
 const BookCard = ({ bookData }) => {
   console.log(bookData)
+
+  const uniqueBookData = bookData.filter((book, index, self) =>
+    index === self.findIndex((b) => b.id === book.id)
+  );
+
   return (
     <>
-      {bookData.map((item) => {
+      {uniqueBookData.map((item, index) => {
+        const uniqueKey = `${item.id} - ${index}`
+
         return (
-          <div key={item.id} className={styles.card}>
+          < div key={uniqueKey} className={styles.card} >
             <div className={styles.content}>
               <img src={bookCover(item)} className={styles.imageContent} />
               <div className={styles.description}>
@@ -16,7 +23,7 @@ const BookCard = ({ bookData }) => {
                 <div className={`${styles.authorName} ${styles.truncate}`}>{authors(item)}</div>
               </div>
             </div>
-          </div>
+          </div >
         );
       })}
     </>
