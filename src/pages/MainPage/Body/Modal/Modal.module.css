@@ -1,0 +1,69 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* 50% прозрачный черный */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5; /* Высокое значение z-index, чтобы быть поверх других элементов */
+}
+
+.modalWindow {
+  background: white;
+  width: 1176px;
+  max-height: 90vh; /* Максимальная высота 90% от высоты экрана */
+  overflow-y: auto; /* Добавляем прокрутку, если содержимое не помещается */
+  position: relative;
+  z-index: 10; /* Еще выше, чем overlay */
+}
+
+.closeButton {
+  width: 24px;
+  height: 24px;
+
+  padding: 24px;
+}
+
+.container {
+  width: 1048px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.imageContent {
+  width: 408px;
+  height: 600px;
+  float: left;
+  border: 1px solid grey;
+}
+
+.imageContent img {
+  width: 100%;
+  height: 100%;
+}
+
+.information {
+  max-width: 800px;
+  margin-left: 48px;
+}
+
+.information h2 {
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 48px;
+}
+
+.description p {
+    text-align: justify;
+    font-size: 20px;
+}

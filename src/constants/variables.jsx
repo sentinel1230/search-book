@@ -1,0 +1,6 @@
+export const bookCover = (item) => item.volumeInfo?.imageLinks?.thumbnail || 'default-image-url.jpg';
+export const bigBookCover = (item) => `${bookCover(item)}&fife=w800` || 'default-image-url.jpg';
+export const bookTitle = (item) => item.volumeInfo?.title || 'Unknown Title';
+export const authors = (item) => item.volumeInfo?.authors || ['Unknown Author'];
+export const categories = (item) => item.volumeInfo?.categories || ['Uncategorized'];
+export const description = (item) => item.volumeInfo?.description || ['No Description'];

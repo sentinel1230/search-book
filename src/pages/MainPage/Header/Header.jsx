@@ -18,7 +18,7 @@ const Header = ({ setData }) => {
       setError("")
 
       let catUrl = category === "All" ? "" : `+subject:${category}`
-      let url = `https://www.googleapis.com/books/v1/volumes?q=${search}${catUrl}&orderBy=${sort}&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU`
+      let url = `https://www.googleapis.com/books/v1/volumes?q=${search}${catUrl}&orderBy=${sort}&key=AIzaSyACVVH5jd4gApUBrEIXMFCfutn_fg3gtyU` + `&maxResults=40`
 
       axios
         .get(url)

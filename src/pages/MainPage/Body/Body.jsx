@@ -1,8 +1,22 @@
 import { useState } from "react";
 import styles from "./Body.module.css";
 import BookCard from "../../../components/bookInforamationCard/BookCard";
+import Modal from "./Modal/Modal";
 
-const Body = ({ bookData, searchBook }) => {
+const Body = ({ bookData }) => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedBook, setSelectedBook] = useState(null);
+
+  const openModal = (book) => {
+    setSelectedBook(book);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedBook(null);
+  };
 
   return (
     <>
@@ -12,12 +26,12 @@ const Body = ({ bookData, searchBook }) => {
           <div className={styles.line} />
         </div>
 
-        <div className={styles.cards}>{<BookCard bookData={bookData} />}</div>
-
+        <div className={styles.cards}>{<BookCard bookData={bookData} openModal={openModal} />}</div>
         <div className={styles.loadButton}>
           <button className={styles.loadButtonStyle}>Load more</button>
         </div>
       </div>
+      {isModalOpen && <Modal book={selectedBook} onClose={closeModal} />}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import styles from "./BookCard.module.css";
-import { categories, bookTitle, authors, bookCover } from "./variables";
+import { categories, bookTitle, authors, bookCover } from "../../constants/variables";
 
-const BookCard = ({ bookData }) => {
+const BookCard = ({ bookData, openModal }) => {
   console.log(bookData)
 
   const uniqueBookData = bookData.filter((book, index, self) =>
@@ -14,7 +14,11 @@ const BookCard = ({ bookData }) => {
         const uniqueKey = `${item.id} - ${index}`
 
         return (
-          < div key={uniqueKey} className={styles.card} >
+          < div
+            key={uniqueKey}
+            className={styles.card}
+            onClick={() => openModal(item)} >
+
             <div className={styles.content}>
               <img src={bookCover(item)} className={styles.imageContent} />
               <div className={styles.description}>
