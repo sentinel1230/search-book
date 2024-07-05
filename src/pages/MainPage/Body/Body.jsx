@@ -27,9 +27,12 @@ const Body = ({ bookData }) => {
         </div>
 
         <div className={styles.cards}>{<BookCard bookData={bookData} openModal={openModal} />}</div>
-        <div className={styles.loadButton}>
-          <button className={styles.loadButtonStyle}>Load more</button>
-        </div>
+
+        {bookData.length > 0 && (
+          <div className={styles.loadButton}>
+            <button className={styles.loadButtonStyle}>Load more</button>
+          </div>
+        )}
       </div>
       {isModalOpen && <Modal book={selectedBook} onClose={closeModal} />}
     </>
